@@ -28,7 +28,7 @@
 <meta property="og:description" content="HTML用来描述网页的内容和结构，由浏览器负责解析转换成具体的图文界面。HTML代码由无数标签组成，标签和内容组成元素 HTML基本结构">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-08T11:17:13.000Z">
-<meta property="article:modified_time" content="2020-04-20T15:33:40.924Z">
+<meta property="article:modified_time" content="2020-04-22T00:55:49.247Z">
 <meta property="article:author" content="Ting">
 <meta property="article:tag" content="HTML">
 <meta property="article:tag" content="前端总结">
@@ -192,7 +192,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-20 23:33:40" itemprop="dateModified" datetime="2020-04-20T23:33:40+08:00">2020-04-20</time>
+                <time title="修改时间：2020-04-22 08:55:49" itemprop="dateModified" datetime="2020-04-22T08:55:49+08:00">2020-04-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,6 +232,14 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>//字符编码，UTF-8支持最全</span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span>//标签</span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>样式标签</span><br><span class="line">  <span class="tag">&lt;<span class="name">link:引用外部css</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"https//baidu.com"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="HTML属性"><a href="#HTML属性" class="headerlink" title="HTML属性"></a>HTML属性</h3><p>主要三个属性class、id、title</p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><h3 id="url格式："><a href="#url格式：" class="headerlink" title="url格式："></a>url格式：</h3><p>协议：//主机地址/路径</p>
+<p>不同的协议代表着不同的资源查找</p>
+<h3 id="URL常见协议"><a href="#URL常见协议" class="headerlink" title="URL常见协议"></a>URL常见协议</h3><ul>
+<li>http：超文本传输协议访问远程网络资源,https相当于sttp安全版</li>
+<li>file：访问本地计算机资源</li>
+<li>maito：访问电子邮箱地址</li>
+<li>ftp：访问共享主机文件资源</li>
+</ul>
 <h2 id="HTML常用元素"><a href="#HTML常用元素" class="headerlink" title="HTML常用元素"></a>HTML常用元素</h2><ol>
 <li>h标签：标题标签h1~h6数字越大标题越小</li>
 </ol>
@@ -254,6 +262,166 @@
 </li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址/本地路径"</span> <span class="attr">alt</span>=<span class="string">"失效后显示这个"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>spen标签：精准提取一段文字内容修改样式</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">   这里有一段话<span class="tag">&lt;<span class="name">spen</span> <span class="attr">style</span>=<span class="string">"color:red&gt;这里要变红&lt;/spen&gt;</span></span></span><br><span class="line"><span class="tag"><span class="string">&lt;/p&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>div标签：将块东西包裹</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>包裹在里面<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><p>img标签：添加图片</p>
+<p>可添加wdith、height属性</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片连接/本地图片路径"</span> <span class="attr">alt</span>=<span class="string">"加载失败后显示"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="超链接和锚点连接"><a href="#超链接和锚点连接" class="headerlink" title="超链接和锚点连接"></a>超链接和锚点连接</h4><ol>
+<li>a标签：打开超链接</li>
+</ol>
+<p>target属性：默认本页要跳转</p>
+<p>_blank</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com/"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">target</span>=<span class="string">"view_window打开新窗口</span></span></span><br><span class="line"><span class="tag"><span class="string">&gt;百度一下&lt;/a&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>iframe标签：嵌套网页</li>
+</ol>
+<p>targrt属性：_blank打开新窗口， _parent父窗口打开， _top顶窗口打开</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://www.baidu.com/"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">height</span>=<span class="string">"600"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">framedorder</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>a元素和base</li>
+</ol>
+<p>base对网站抽离，a元素补齐网页和属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"dw=搜索"</span>&gt;</span>百度搜索<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>锚点连接</p>
+<p>通过元素添加id属性，实现页内锚点跳转</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#next"</span>&gt;</span>跳到下一个<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"next"</span>&gt;</span>我是下一个<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>跳到顶部<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><p>伪链接</p>
+<p>伪链接主要用来电机执行相对应的js代码操作</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"javascript: alert('hello world')"</span>&gt;弹出窗口&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符实体"><a href="#字符实体" class="headerlink" title="字符实体"></a>字符实体</h4><table>
+<thead>
+<tr>
+<th align="center"><code>显示结果</code></th>
+<th align="center"><code>描述</code></th>
+<th align="center"><code>实体名称</code></th>
+<th align="center"><code>实体编号</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">``</td>
+<td align="center"><code>空格</code></td>
+<td align="center"><code>&amp;nbsp;</code></td>
+<td align="center"><code>&amp;#160;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center"><code>小于号</code></td>
+<td align="center"><code>&amp;lt;</code></td>
+<td align="center"><code>&amp;#60;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center"><code>大于号</code></td>
+<td align="center"><code>&amp;gt;</code></td>
+<td align="center"><code>&amp;#62;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td align="center"><code>和号</code></td>
+<td align="center"><code>&amp;amp;</code></td>
+<td align="center"><code>&amp;#38;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&quot;</code></td>
+<td align="center"><code>引号</code></td>
+<td align="center"><code>&amp;quot;</code></td>
+<td align="center"><code>&amp;#34;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&#39;</code></td>
+<td align="center"><code>撇号</code></td>
+<td align="center"><code>&amp;apos; (IE不支持)</code></td>
+<td align="center"><code>&amp;#39;</code></td>
+</tr>
+<tr>
+<td align="center"><code>￠</code></td>
+<td align="center"><code>分（cent）</code></td>
+<td align="center"><code>&amp;cent;</code></td>
+<td align="center"><code>&amp;#162;</code></td>
+</tr>
+<tr>
+<td align="center"><code>£</code></td>
+<td align="center"><code>镑（pound）</code></td>
+<td align="center"><code>&amp;pound;</code></td>
+<td align="center"><code>&amp;#163;</code></td>
+</tr>
+<tr>
+<td align="center"><code>¥</code></td>
+<td align="center"><code>元（yen）</code></td>
+<td align="center"><code>&amp;yen;</code></td>
+<td align="center"><code>&amp;#165;</code></td>
+</tr>
+<tr>
+<td align="center"><code>€</code></td>
+<td align="center"><code>欧元（euro）</code></td>
+<td align="center"><code>&amp;euro;</code></td>
+<td align="center"><code>&amp;#8364;</code></td>
+</tr>
+<tr>
+<td align="center"><code>§</code></td>
+<td align="center"><code>小节</code></td>
+<td align="center"><code>&amp;sect;</code></td>
+<td align="center"><code>&amp;#167;</code></td>
+</tr>
+<tr>
+<td align="center"><code>©</code></td>
+<td align="center"><code>版权（copyright）</code></td>
+<td align="center"><code>&amp;copy;</code></td>
+<td align="center"><code>&amp;#169;</code></td>
+</tr>
+<tr>
+<td align="center"><code>®</code></td>
+<td align="center"><code>注册商标</code></td>
+<td align="center"><code>&amp;reg;</code></td>
+<td align="center"><code>&amp;#174;</code></td>
+</tr>
+<tr>
+<td align="center"><code>™</code></td>
+<td align="center"><code>商标</code></td>
+<td align="center"><code>&amp;trade;</code></td>
+<td align="center"><code>&amp;#8482;</code></td>
+</tr>
+<tr>
+<td align="center"><code>×</code></td>
+<td align="center"><code>乘号</code></td>
+<td align="center"><code>&amp;times;</code></td>
+<td align="center"><code>&amp;#215;</code></td>
+</tr>
+<tr>
+<td align="center"><code>÷</code></td>
+<td align="center"><code>除号</code></td>
+<td align="center"><code>&amp;divide;</code></td>
+<td align="center"><code>&amp;#247;</code></td>
+</tr>
+</tbody></table>
+<h4 id="HTML不常用元素"><a href="#HTML不常用元素" class="headerlink" title="HTML不常用元素"></a>HTML不常用元素</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">code</span>&gt;</span>等宽字体<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line">        换行</span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        添加分割线</span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span> <span class="attr">color</span>=<span class="string">"red"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -339,7 +507,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML基本结构"><span class="nav-number">1.</span> <span class="nav-text">HTML基本结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档声明-lt-DOCTYPE-html-gt"><span class="nav-number">1.1.</span> <span class="nav-text">文档声明&lt; !DOCTYPE html&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html元素"><span class="nav-number">1.2.</span> <span class="nav-text">html元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head元素"><span class="nav-number">1.3.</span> <span class="nav-text">head元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML属性"><span class="nav-number">1.4.</span> <span class="nav-text">HTML属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML常用元素"><span class="nav-number">2.</span> <span class="nav-text">HTML常用元素</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML基本结构"><span class="nav-number">1.</span> <span class="nav-text">HTML基本结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档声明-lt-DOCTYPE-html-gt"><span class="nav-number">1.1.</span> <span class="nav-text">文档声明&lt; !DOCTYPE html&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html元素"><span class="nav-number">1.2.</span> <span class="nav-text">html元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head元素"><span class="nav-number">1.3.</span> <span class="nav-text">head元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML属性"><span class="nav-number">1.4.</span> <span class="nav-text">HTML属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">2.</span> <span class="nav-text">URL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#url格式："><span class="nav-number">2.1.</span> <span class="nav-text">url格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL常见协议"><span class="nav-number">2.2.</span> <span class="nav-text">URL常见协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML常用元素"><span class="nav-number">3.</span> <span class="nav-text">HTML常用元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#超链接和锚点连接"><span class="nav-number">3.0.1.</span> <span class="nav-text">超链接和锚点连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符实体"><span class="nav-number">3.0.2.</span> <span class="nav-text">字符实体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML不常用元素"><span class="nav-number">3.0.3.</span> <span class="nav-text">HTML不常用元素</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
