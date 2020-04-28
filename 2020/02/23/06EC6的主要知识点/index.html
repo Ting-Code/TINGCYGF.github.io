@@ -20,21 +20,22 @@
     var CONFIG = {"hostname":"tingcygf.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Javascript是运行在客户端的脚本语言（Script是脚本的意思） 脚本语言：不需要编译，由js解释器逐行进行解析并执行 现在可以基于Node.js技术进行服务器编程">
+  <meta name="description" content="ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript基础知识总结笔记">
-<meta property="og:url" content="https://tingcygf.github.io/2020/02/09/JavaScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="EC6的主要知识点">
+<meta property="og:url" content="https://tingcygf.github.io/2020/02/23/06EC6%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="Ting的博客平台">
-<meta property="og:description" content="Javascript是运行在客户端的脚本语言（Script是脚本的意思） 脚本语言：不需要编译，由js解释器逐行进行解析并执行 现在可以基于Node.js技术进行服务器编程">
+<meta property="og:description" content="ECMAScript 6（简称ES6）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（ES2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-09T03:12:26.000Z">
-<meta property="article:modified_time" content="2020-04-24T03:26:14.776Z">
+<meta property="article:published_time" content="2020-02-23T03:12:33.000Z">
+<meta property="article:modified_time" content="2020-04-26T01:35:18.386Z">
 <meta property="article:author" content="Ting">
 <meta property="article:tag" content="前端总结">
 <meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="ES6">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tingcygf.github.io/2020/02/09/JavaScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://tingcygf.github.io/2020/02/23/06EC6%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9/">
 
 
 <script id="page-configurations">
@@ -47,7 +48,7 @@
   };
 </script>
 
-  <title>JavaScript基础知识总结笔记 | Ting的博客平台</title>
+  <title>EC6的主要知识点 | Ting的博客平台</title>
   
 
 
@@ -162,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tingcygf.github.io/2020/02/09/JavaScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://tingcygf.github.io/2020/02/23/06EC6%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ting.png">
@@ -175,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript基础知识总结笔记
+          EC6的主要知识点
         </h1>
 
         <div class="post-meta">
@@ -185,14 +186,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-09 11:12:26" itemprop="dateCreated datePublished" datetime="2020-02-09T11:12:26+08:00">2020-02-09</time>
+              <time title="创建时间：2020-02-23 11:12:33" itemprop="dateCreated datePublished" datetime="2020-02-23T11:12:33+08:00">2020-02-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-24 11:26:14" itemprop="dateModified" datetime="2020-04-24T11:26:14+08:00">2020-04-24</time>
+                <time title="修改时间：2020-04-26 09:35:18" itemprop="dateModified" datetime="2020-04-26T09:35:18+08:00">2020-04-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,163 +216,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Javascript是运行在客户端的脚本语言（Script是脚本的意思）</p>
-<p>脚本语言：不需要编译，由js解释器逐行进行解析并执行</p>
-<p>现在可以基于Node.js技术进行服务器编程</p>
+        <p>ECMAScript 6（简称<em>ES6</em>）是于2015年6月正式发布的JavaScript语言的标准，正式名为ECMAScript 2015（<em>ES</em>2015）。它的目标是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
 <a id="more"></a>
-
-<h2 id="初识-JavaScript"><a href="#初识-JavaScript" class="headerlink" title="初识 JavaScript"></a>初识 JavaScript</h2><p>Javascript是运行在客户端的脚本语言（Script是脚本的意思）</p>
-<p>脚本语言：不需要编译，由js解释器逐行进行解析并执行</p>
-<p>现在可以基于Node.js技术进行服务器编程</p>
-<p>ps：js中使用单引号</p>
-<h3 id="浏览器执行JS过程"><a href="#浏览器执行JS过程" class="headerlink" title="浏览器执行JS过程"></a>浏览器执行JS过程</h3><p>浏览器分为渲染引擎和JS引擎</p>
-<p>渲染引擎：解析HTML与CSS，俗称内核，如chrome的blink</p>
-<p>JS引擎：读取网页在JavaScript代码并运行，如chrome的V8</p>
-<h3 id="JavaScript的组成"><a href="#JavaScript的组成" class="headerlink" title="JavaScript的组成"></a>JavaScript的组成</h3><ol>
-<li>ECMAScript（基础语法）：由ECMA国际标准化的一门语言。</li>
-<li>DOM（文档对象模型）</li>
-<li>BOM（浏览器对象模型）</li>
-</ol>
-<h3 id="JavaScript三种方式"><a href="#JavaScript三种方式" class="headerlink" title="JavaScript三种方式"></a>JavaScript三种方式</h3><ol>
-<li>行内式：&lt;   &gt;</li>
-<li>内嵌式：<script></script></li>
-<li>外部式: <script src='**.js'></script></li>
-</ol>
-<h3 id="JavaScript输入输出语句"><a href="#JavaScript输入输出语句" class="headerlink" title="JavaScript输入输出语句"></a>JavaScript输入输出语句</h3><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">alert（msg）</td>
-<td align="center">浏览器弹出警示框</td>
-</tr>
-<tr>
-<td align="center">console.log（msg）</td>
-<td align="center">浏览器控制台打印输出信息</td>
-</tr>
-<tr>
-<td align="center">prompt（info）</td>
-<td align="center">浏览器弹出输入框可以输入</td>
-</tr>
-</tbody></table>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量是存放数据的<strong>容器</strong>，通过<strong>变量名</strong>获取数据</p>
-<p>本质：变量是程序内申请存放数据的空间</p>
-<ul>
-<li>声明多个变量：</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myname = <span class="string">'ting'</span>,</span><br><span class="line">    age = <span class="number">18</span>,</span><br><span class="line">    big = <span class="number">66</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>声明变量特殊情况</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">只声明不赋值</th>
-<th align="center">undefind</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">不声明不赋值</td>
-<td align="center">报错</td>
-</tr>
-<tr>
-<td align="center">不声明只赋值</td>
-<td align="center">正常输出（全局变量）</td>
-</tr>
-</tbody></table>
-<ul>
-<li>变量命名规范<ul>
-<li>由字母、数组、下划线、$符号组成</li>
-<li>区分大小写</li>
-<li>不能以数字开头</li>
-<li>不能是关键字：var、for</li>
-<li>变量名必须有意义</li>
-<li>遵守驼峰命名法。首字母小写，后单词大写：myFirstName</li>
-</ul>
-</li>
-</ul>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li>简单数据类型</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">Number</th>
-<th align="center">数字类型：包括整型和浮点型</th>
-<th align="center">0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Boolean</td>
-<td align="center">布尔值：true，false</td>
-<td align="center">false</td>
-</tr>
-<tr>
-<td align="center">String</td>
-<td align="center">字符串类型</td>
-<td align="center">“”</td>
-</tr>
-<tr>
-<td align="center">Undefined</td>
-<td align="center">声明后没赋值</td>
-<td align="center">undefined</td>
-</tr>
-<tr>
-<td align="center">Null</td>
-<td align="center">空值</td>
-<td align="center">null</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>数字类型中</p>
-<ul>
-<li>数字前面加0代表八进制</li>
-<li>数字前面加0x代表十六进制</li>
-<li>最大值：Number.MAX_VALUE</li>
-<li>最小值：Number.MIN_VALUE</li>
-<li>lnfinity：代表无穷大</li>
-<li>-lnfinity：无穷小</li>
-<li>NaN：非数值</li>
-<li>isNan()  :用来判断是否为数值，返回true  /  false</li>
-</ul>
-</li>
-<li><p>字符串类型</p>
-<ul>
-<li>字符串嵌套，外单内双 “ 我 ’ 是 ‘ 谁 ”</li>
-<li>字符串转义符：</li>
-</ul>
-<p>转义符都是  \   开头 ，  并且都在引号中</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">\n</th>
-<th align="center">换行   newline</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\\</td>
-<td align="center">\</td>
-</tr>
-<tr>
-<td align="center">\‘    \“</td>
-<td align="center">’  “</td>
-</tr>
-<tr>
-<td align="center">\t</td>
-<td align="center">tab缩进</td>
-</tr>
-<tr>
-<td align="center">\b</td>
-<td align="center">空格   blank</td>
-</tr>
-</tbody></table>
-
     </div>
 
     
@@ -382,6 +228,7 @@
           <div class="post-tags">
               <a href="/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/" rel="tag"># 前端总结</a>
               <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/ES6/" rel="tag"># ES6</a>
           </div>
 
         
@@ -390,12 +237,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/17/CSS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/" rel="prev" title="CSS基础总结笔记">
-      <i class="fa fa-chevron-left"></i> CSS基础总结笔记
+    <a href="/2020/02/09/05JavaScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/" rel="prev" title="JavaScript基础知识总结笔记">
+      <i class="fa fa-chevron-left"></i> JavaScript基础知识总结笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/02/23/EC6%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="next" title="EC6的主要知识点">
-      EC6的主要知识点 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/02/27/07Vultr%E7%9A%84%E8%B4%AD%E4%B9%B0+SSR+%E9%94%90%E9%80%9F+%E5%A4%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" rel="next" title="科学上网小妙招">
+      科学上网小妙招 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -455,7 +302,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初识-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">初识 JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器执行JS过程"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器执行JS过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript的组成"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript三种方式"><span class="nav-number">1.3.</span> <span class="nav-text">JavaScript三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript输入输出语句"><span class="nav-number">1.4.</span> <span class="nav-text">JavaScript输入输出语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -471,7 +317,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -484,7 +330,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
