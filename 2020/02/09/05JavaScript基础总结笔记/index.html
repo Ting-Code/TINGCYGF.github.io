@@ -28,7 +28,7 @@
 <meta property="og:description" content="Javascript是运行在客户端的脚本语言（Script是脚本的意思） 脚本语言：不需要编译，由js解释器逐行进行解析并执行 现在可以基于Node.js技术进行服务器编程">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-09T03:12:26.000Z">
-<meta property="article:modified_time" content="2020-04-24T03:26:14.776Z">
+<meta property="article:modified_time" content="2020-04-30T08:07:17.187Z">
 <meta property="article:author" content="Ting">
 <meta property="article:tag" content="前端总结">
 <meta property="article:tag" content="JavaScript">
@@ -192,7 +192,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-24 11:26:14" itemprop="dateModified" datetime="2020-04-24T11:26:14+08:00">2020-04-24</time>
+                <time title="修改时间：2020-04-30 16:07:17" itemprop="dateModified" datetime="2020-04-30T16:07:17+08:00">2020-04-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -226,6 +226,7 @@
 <p>ps：js中使用单引号</p>
 <h3 id="浏览器执行JS过程"><a href="#浏览器执行JS过程" class="headerlink" title="浏览器执行JS过程"></a>浏览器执行JS过程</h3><p>浏览器分为渲染引擎和JS引擎</p>
 <p>渲染引擎：解析HTML与CSS，俗称内核，如chrome的blink</p>
+<p>主流浏览器（必须有独立内核）市场份额大于3%<br>内核名称<br>IE : trident<br>chrome : webkit/blink<br>firefox : gecko<br>opera : presto<br>safari : webkit</p>
 <p>JS引擎：读取网页在JavaScript代码并运行，如chrome的V8</p>
 <h3 id="JavaScript的组成"><a href="#JavaScript的组成" class="headerlink" title="JavaScript的组成"></a>JavaScript的组成</h3><ol>
 <li>ECMAScript（基础语法）：由ECMA国际标准化的一门语言。</li>
@@ -371,6 +372,118 @@
 <td align="center">空格   blank</td>
 </tr>
 </tbody></table>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><strong>运算大于赋值的优先级</strong><br>js是动态语言，动态语言基本上都是解释性语言，解释性语言基本上都是脚本语言。<br>js是浮点型语言（带小数点）。</p>
+<ul>
+<li><p>原数据（stack栈),先进后出。</p>
+</li>
+<li><p>引用值（heap堆数据）大致上放堆heap里面</p>
+<ul>
+<li>array数组, Object, function … data,RegExp正则。</li>
+</ul>
+</li>
+</ul>
+<p>引用值是把第一个值放到第二个值里面，改第一个值，第二个值也改变</p>
+<p>js由值决定类型。原始值和引用值唯一的不同是赋值形式不同</p>
+<h3 id="语句基本规则"><a href="#语句基本规则" class="headerlink" title="语句基本规则"></a>语句基本规则</h3><ul>
+<li><p>语句后面要用分号结束“；</p>
+</li>
+<li><p>但function test(){}，for(){}，if(){}后面都不用加分号</p>
+</li>
+<li><p>“= + / -”两边都应该有空格</p>
+</li>
+</ul>
+<h4 id="代码错误"><a href="#代码错误" class="headerlink" title="代码错误"></a>代码错误</h4><p>错误分为两种</p>
+<ul>
+<li>低级错误（语法解析错误），不能写中文</li>
+<li>逻辑错误（标准错误，情有可原，错的那个执行不了）</li>
+</ul>
+<p>代码错误只会影响当前代码块会终止，不影响下面代码块</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="运算操作符"><a href="#运算操作符" class="headerlink" title="运算操作符"></a>运算操作符</h4><ul>
+<li><p>“+”作用：数学运算、字符串链接 </p>
+</li>
+<li><p>任何数据类型加字符串都等于字符串</p>
+</li>
+</ul>
+<p>例var a = “a”+ true + 1; //打印atrue1<br>例var a = 1 + “a” + 1 + 1; //打印1a11<br>例var a = 1 + 1 + “a” + 1 + 1; //打印2a11，从左向右运算<br>例var a = 1 + 1 + “a” +( 1 + 2); //打印2a3</p>
+<p>例var a = 0 / 0； //答案是NaN，应该得出一个数字类型的数，但是没法表达，就用NaN (NaN是Not a Number非数，不是数，但是是数字类型</p>
+<p>例var a = 1 / 0; //是infinity（无限）<br>例var a = -1 / 0; /是-infinity（负无限）</p>
+<ul>
+<li>%，摩尔，模，是取余数的意思</li>
+</ul>
+<p>例var a =5%2 //5%2是五除二的余数，商二余一<br>例var a =5%1 //是五除一的余数，结果是0<br>例var num = 1 % 5; //意思是1除以5的余数。商0余1<br>例var a =4%6 //是四除六的余数，结果是4<br>例var a = 4;a % = 5;document.write(a); // 4<br>例var a = 0;a % = 5;document.write(a); //0<br>例var a = 10;a %= 2;document.write(a); //0<br>例var a = 3;a % = 4; //4</p>
+<ul>
+<li><p>“-”，“*”，“/“，“%”，”=“，“()” 优先级”=“最弱【赋值符号优先级最低】，”()”优先级较高</p>
+</li>
+<li><p>“++”，“- -”，”+=“，“-=”，“/=“，“*=”，“%=” ++</p>
+</li>
+</ul>
+<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><ul>
+<li><p>“&gt;”，”&lt;”，”==”，“&gt;=”，“&lt;=”，”!=”</p>
+</li>
+<li><p>比较结果为boolean值</p>
+</li>
+<li><p>但凡是运算符，都是要有运算的</p>
+</li>
+<li><p>用到布尔值，true或false</p>
+</li>
+<li><p>字符串的比较，比的是ASCII码（七位二进制0000000）</p>
+</li>
+</ul>
+<p>例var a = “10”&gt;”8”;document.write(a); //答案false</p>
+<p>不是十和八比，是字符串一零和八比，先用开头的一和八比，比不过就不看第二位了；一样的就拿零和八比</p>
+<p>例var a = 123;document.write(a); //答案false<br>运算结果为真实的值</p>
+<ul>
+<li>= =，等不等于</li>
+</ul>
+<p>例var a = NaN == NaN; //答案是false，NaN不等于任何东西，包括他自己</p>
+<p>例var a = undefined == underfined; //答案是true</p>
+<p>例var a = infinity == infinity; //答案是true</p>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>“&amp;&amp;”，“||”，“!“运算结果为真实的值 </p>
+<ul>
+<li>“&amp;&amp;”与运算符</li>
+</ul>
+<p>有假即输出0，全真输出最后一个表达式的值</p>
+<p>可以用于判断，先判断是否为真然后输出最后值</p>
+<ul>
+<li>&amp;与运算 我们一般不用</li>
+</ul>
+<p>转化为二进制，相同为1，不同为0</p>
+<ul>
+<li>“||”或运算符</li>
+</ul>
+<p>全假才为假，有一个真就为真</p>
+<ul>
+<li>“!“非运算符</li>
+</ul>
+<p>先转成布尔值，再取反</p>
+<p>被认定为false的值：转换为布尔值会被认定为false的值undefined， null， NaN， “”（空串）， 0， false</p>
+<h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><h4 id="If语句"><a href="#If语句" class="headerlink" title="If语句"></a>If语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(条件判断)&#123;</span><br><span class="line">	当条件成立时，执行里面的执行语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当if的条件成立时，才能执行{}内的语句</p>
+<p>当条件转化为布尔值，如果为true就执行；如果为false就不执行</p>
+<p>&amp;&amp;放在if中的，全真才为真，&amp;&amp;是并且的意思</p>
+<p>||放在if中是或者的意思，有一个是真就可以了</p>
+<p><strong>不能写90&lt;score&lt;100</strong>,这样写会先比90&lt;score,等于true以后再跟100比</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(scor &gt;= <span class="number">90</span> &amp;&amp; score &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(score + <span class="string">'优秀学生'</span>)	;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>else if</p>
+<p>满足了第一条就不看第二条了</p>
+</li>
+</ul>
+<p>用else if要满足条件与条件之间互斥，不能有交叉点。除了上面所有以外的。else if除了这个以外，满足第一个就不看了，不满足就看后面的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(score &gt;= <span class="number">90</span> &amp;&amp; sccre &lt;=<span class="number">100</span>)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'优秀'</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(score &lt; <span class="number">90</span> &amp;&amp; score &gt;= <span class="number">60</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'及格'</span>)；</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(score &lt; <span class="number">60</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'不及格'</span>)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (只执行一次; 判断; 判断成立后执行语句) &#123;</span><br><span class="line">	判断成立后执行；</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">	<span class="built_in">document</span>.write(‘a’)；</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//执行顺序如下：</span></span><br><span class="line"><span class="keyword">var</span> i= <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(i &lt;<span class="number">10</span>)&#123;</span><br><span class="line"><span class="built_in">document</span>.write(‘a’)</span><br><span class="line">&#125;</span><br><span class="line">i++</span><br><span class="line"><span class="keyword">if</span>(i &lt;<span class="number">10</span>)&#123;</span><br><span class="line"><span class="built_in">document</span>.write(‘a’)</span><br><span class="line">&#125;</span><br><span class="line">i++</span><br></pre></td></tr></table></figure>
+
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><p>while循环是for循环的简化版for( ； ； ){}</p>
+<p>while循环底层机制是for循环</p>
+<p>for ( ; 只在这一部分写，前后不写 ; ){}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while（判断语句)&#123;</span><br><span class="line">	判断成立执行语句；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do while循环"></a>do while循环</h4><p>do while是不管满不满足条件都会先执行一次，再判断成不成立，如果成立才会执行第二次，不成立就停止 一般没人用</p>
 
     </div>
 
@@ -455,7 +568,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初识-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">初识 JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器执行JS过程"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器执行JS过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript的组成"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript三种方式"><span class="nav-number">1.3.</span> <span class="nav-text">JavaScript三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript输入输出语句"><span class="nav-number">1.4.</span> <span class="nav-text">JavaScript输入输出语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初识-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">初识 JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器执行JS过程"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器执行JS过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript的组成"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript三种方式"><span class="nav-number">1.3.</span> <span class="nav-text">JavaScript三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript输入输出语句"><span class="nav-number">1.4.</span> <span class="nav-text">JavaScript输入输出语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">4.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语句基本规则"><span class="nav-number">4.1.</span> <span class="nav-text">语句基本规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码错误"><span class="nav-number">4.1.1.</span> <span class="nav-text">代码错误</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">4.2.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运算操作符"><span class="nav-number">4.2.1.</span> <span class="nav-text">运算操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较运算符"><span class="nav-number">4.2.2.</span> <span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">4.2.3.</span> <span class="nav-text">逻辑运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件语句"><span class="nav-number">4.3.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#If语句"><span class="nav-number">4.3.1.</span> <span class="nav-text">If语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句"><span class="nav-number">4.4.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for循环"><span class="nav-number">4.4.1.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while循环"><span class="nav-number">4.4.2.</span> <span class="nav-text">while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#do-while循环"><span class="nav-number">4.4.3.</span> <span class="nav-text">do while循环</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

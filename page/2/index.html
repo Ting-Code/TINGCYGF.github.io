@@ -349,7 +349,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-28 14:51:20" itemprop="dateModified" datetime="2020-04-28T14:51:20+08:00">2020-04-28</time>
+                <time title="修改时间：2020-04-29 14:40:52" itemprop="dateModified" datetime="2020-04-29T14:40:52+08:00">2020-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -378,8 +378,120 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 进入项目存放文件夹</span><br><span class="line">vue create supermal（项目名称）</span><br></pre></td></tr></table></figure>
 
 <p>本地项目联系GIt</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;TINGCYGF&#x2F;supermal.git项目仓库地址</span><br><span class="line">git push -u origin master</span><br><span class="line">lzs1127163161..</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;TINGCYGF&#x2F;supermal.git项目仓库地址</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
+<h2 id="项目基本设置"><a href="#项目基本设置" class="headerlink" title="项目基本设置"></a>项目基本设置</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>src-&gt;</p>
+<ul>
+<li>network（网络相关）</li>
+<li>components（公共组件）<ul>
+<li>common（每个项目都可以用的组件）</li>
+<li>content（只对这个项目有用的组件）</li>
+</ul>
+</li>
+<li>pages -&gt; 路由分层</li>
+<li>common （公共js文件）</li>
+<li>assets（资源存放）<ul>
+<li>img</li>
+<li>css<ul>
+<li>initialize.css (让样式在各个浏览器统一的文件）</li>
+<li>base.css</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>router(路由)</li>
+<li>store(VueX状态管理)</li>
+<li>views（视图组件）</li>
+</ul>
+<h4 id="设置CSS初始化和全局样式"><a href="#设置CSS初始化和全局样式" class="headerlink" title="设置CSS初始化和全局样式"></a>设置CSS初始化和全局样式</h4><ul>
+<li>initialize.css (github搜索引用)</li>
+<li>base.css</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">"./normalize.css"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*:root -&gt; 获取根元素html*/</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">--color-text</span>: <span class="number">#666</span>;</span><br><span class="line">  <span class="attribute">--color-high-text</span>: <span class="number">#ff5777</span>;</span><br><span class="line">  <span class="attribute">--color-tint</span>: <span class="number">#ff8198</span>;</span><br><span class="line">  <span class="attribute">--color-background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">--font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">--line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*,</span><br><span class="line">*<span class="selector-pseudo">::before</span>,</span><br><span class="line">*<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">"Helvetica Neue"</span>,Helvetica,<span class="string">"PingFang SC"</span>,<span class="string">"Hiragino Sans GB"</span>,<span class="string">"Microsoft YaHei"</span>,<span class="string">"微软雅黑"</span>,Arial,sans-serif;</span><br><span class="line">  <span class="attribute">user-select</span>: none; <span class="comment">/* 禁止用户鼠标在页面上选中文字/图片等 */</span></span><br><span class="line">  <span class="attribute">-webkit-tap-highlight-color</span>: transparent; <span class="comment">/* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--color-background);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--color-text);</span><br><span class="line">  <span class="comment">/* rem vw/vh */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--color-text);</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clear-fix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clear-fix</span> &#123;</span><br><span class="line">  <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tabbar的封装"><a href="#tabbar的封装" class="headerlink" title="tabbar的封装"></a>tabbar的封装</h3><h4 id="别名配置"><a href="#别名配置" class="headerlink" title="别名配置"></a>别名配置</h4><p>根目录新建vue.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  configureWebpack: &#123;</span><br><span class="line">    resolve: &#123;</span><br><span class="line">      alias: &#123;</span><br><span class="line">        <span class="string">'assets'</span>: <span class="string">'@/assets'</span>,</span><br><span class="line">        <span class="string">'common'</span>: <span class="string">'@/common'</span>,</span><br><span class="line">        <span class="string">'components'</span>: <span class="string">'@/components'</span>,</span><br><span class="line">        <span class="string">'network'</span>: <span class="string">'@/network'</span>,</span><br><span class="line">        <span class="string">'views'</span>: <span class="string">'@/views'</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="项目标准文件"><a href="#项目标准文件" class="headerlink" title="项目标准文件"></a>项目标准文件</h4><p>根目录新建.editorconfig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root &#x3D; true</span><br><span class="line"></span><br><span class="line">[*]</span><br><span class="line">charset &#x3D; utf-8</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 2</span><br><span class="line">end_of_line &#x3D; lf</span><br><span class="line">insert_final_newline &#x3D; true</span><br><span class="line">trim_trailing_whitespace &#x3D; true</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>封装HYTabbar</li>
+<li>封装HYTabbarItem</li>
+<li>响应点击切换的设计</li>
+<li>封装完成后，使用时对HYTabbar重新包装</li>
+</ul>
+<h4 id="1-4-axios的封装"><a href="#1-4-axios的封装" class="headerlink" title="1.4. axios的封装"></a>1.4. axios的封装</h4><ul>
+<li>创建axios实例</li>
+<li>拦截响应，返回.data数据</li>
+<li>根据传入的options发送请求，并且调用对应resolve和reject</li>
+</ul>
+<h3 id="二-首先开发"><a href="#二-首先开发" class="headerlink" title="二. 首先开发"></a>二. 首先开发</h3><h4 id="2-1-navbar的封装和使用"><a href="#2-1-navbar的封装和使用" class="headerlink" title="2.1. navbar的封装和使用"></a>2.1. navbar的封装和使用</h4><ul>
+<li>封装navbar包含三个插槽：left、center、right</li>
+<li>设置navbar相关的样式</li>
+<li>使用navbar实现首页的导航栏</li>
+</ul>
+<h4 id="2-2-请求首页数据"><a href="#2-2-请求首页数据" class="headerlink" title="2.2. 请求首页数据"></a>2.2. 请求首页数据</h4><ul>
+<li>封装请求首页更多数据</li>
+<li>将banner数据放在banners变量中</li>
+<li>将recommend数据放在recommends变量中</li>
+</ul>
+<h4 id="2-3-根据Swiper封装HomeSwiper"><a href="#2-3-根据Swiper封装HomeSwiper" class="headerlink" title="2.3. 根据Swiper封装HomeSwiper"></a>2.3. 根据Swiper封装HomeSwiper</h4><ul>
+<li>使用Swiper和SwiperItem</li>
+<li>传入banners进行展示</li>
+</ul>
+<h4 id="2-4-封装FeatureView"><a href="#2-4-封装FeatureView" class="headerlink" title="2.4. 封装FeatureView"></a>2.4. 封装FeatureView</h4><ul>
+<li>传入recommends数据，进行展示</li>
+</ul>
+<h4 id="2-5-封装RecommendView"><a href="#2-5-封装RecommendView" class="headerlink" title="2.5. 封装RecommendView"></a>2.5. 封装RecommendView</h4><ul>
+<li>展示一张图片即可</li>
+</ul>
+<h4 id="2-6-封装tabControl"><a href="#2-6-封装tabControl" class="headerlink" title="2.6. 封装tabControl"></a>2.6. 封装tabControl</h4><ul>
+<li>基本结构的封装</li>
+<li>监听点击</li>
+</ul>
+<h4 id="2-7-请求和保存商品数据"><a href="#2-7-请求和保存商品数据" class="headerlink" title="2.7. 请求和保存商品数据"></a>2.7. 请求和保存商品数据</h4><ul>
+<li>定义goodsList变量，用于存储请求到的商品数据</li>
+<li>根据type和page请求商品数据</li>
+<li>将商品数据保存起来</li>
+</ul>
+<h4 id="2-8-封装GoodsList和GoodsListItem"><a href="#2-8-封装GoodsList和GoodsListItem" class="headerlink" title="2.8. 封装GoodsList和GoodsListItem"></a>2.8. 封装GoodsList和GoodsListItem</h4><ul>
+<li>展示商品列表，封装GoodsList</li>
+<li>列表中每一个商品，封装GoodsListItem</li>
+<li>注意CSS属性的设置即可</li>
+</ul>
+<h4 id="2-9-滚动的封装Scroll"><a href="#2-9-滚动的封装Scroll" class="headerlink" title="2.9. 滚动的封装Scroll"></a>2.9. 滚动的封装Scroll</h4><ul>
+<li>学习BetterScroll的使用</li>
+<li>安装better-scroll</li>
+<li>封装一个独立的组件，用于作为滚动组件：Scroll</li>
+<li>组件内代码的封装：<ul>
+<li>1.创建BetterScroll对象，并且传入DOM和选项（probeType、click、pullUpLoad）</li>
+<li>2.监听scroll事件，该事件会返回一个position</li>
+<li>3.监听pullingUp事件，监听到该事件进行上拉加载更多</li>
+<li>4.封装刷新的方法：this.scroll.refresh()</li>
+<li>5.封装滚动的方法：this.scroll.scrollTo(x, y, time)</li>
+<li>6.封装完成刷新的方法：this.scroll.finishedPullUp</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-10-上拉加载更多"><a href="#2-10-上拉加载更多" class="headerlink" title="2.10. 上拉加载更多"></a>2.10. 上拉加载更多</h4><ul>
+<li>通过Scroll监听上拉加载更多。</li>
+<li>在Home中加载更多的数据。</li>
+<li>请求数据完成后，调动finishedPullUp</li>
+</ul>
+<h4 id="2-11-返回顶部"><a href="#2-11-返回顶部" class="headerlink" title="2.11. 返回顶部"></a>2.11. 返回顶部</h4><ul>
+<li>封装BackTop组件</li>
+<li>定义一个常量，用于决定在什么数值下显示BackTop组件</li>
+<li>监听滚动，决定BackTop的显示和隐藏</li>
+<li>监听BackTop的点击，点击时，调用scrollTo返回顶部</li>
+</ul>
+<h4 id="2-12-tabControl的停留"><a href="#2-12-tabControl的停留" class="headerlink" title="2.12. tabControl的停留"></a>2.12. tabControl的停留</h4><ul>
+<li>重新添加一个tabControl组件（需要设置定位，否则会被盖住）</li>
+<li>在updated钩子中获取tabControl的offsetTop</li>
+<li>判断是否滚动超过了offsetTop来决定是否显示新添加的tabControl</li>
+</ul>
 
       
     </div>
