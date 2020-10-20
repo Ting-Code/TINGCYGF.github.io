@@ -28,7 +28,7 @@
 <meta property="og:description" content="CSS层叠样式表，CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-14T01:11:15.000Z">
-<meta property="article:modified_time" content="2020-10-16T09:38:30.890Z">
+<meta property="article:modified_time" content="2020-10-19T08:52:14.308Z">
 <meta property="article:author" content="Ting">
 <meta property="article:tag" content="前端总结">
 <meta property="article:tag" content="CSS">
@@ -192,7 +192,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 17:38:30" itemprop="dateModified" datetime="2020-10-16T17:38:30+08:00">2020-10-16</time>
+                <time title="修改时间：2020-10-19 16:52:14" itemprop="dateModified" datetime="2020-10-19T16:52:14+08:00">2020-10-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,35 +307,35 @@
 <li><p>line-through：中划线（删除线）</p>
 </li>
 </ul>
-<p>nu、ins元素默认就是设置了text-decoration为underline</p>
+<p>u、ins元素默认就是设置了text-decoration为underline</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">text-decration</span>: overline;</span><br><span class="line">&#125;</span><br><span class="line">大部分<span class="selector-tag">a</span>元素不需要下划线</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">rext-decration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="字母、单词之间的间距"><a href="#字母、单词之间的间距" class="headerlink" title="字母、单词之间的间距"></a>字母、单词之间的间距</h4><p><strong>letter-spacing、word-spacing</strong></p>
 <p>默认是0，可以设置为负数</p>
-<p><strong>text-transform</strong></p>
-<h4 id="设置文字的大小写转换"><a href="#设置文字的大小写转换" class="headerlink" title="设置文字的大小写转换"></a>设置文字的大小写转换</h4><ul>
-<li><p>capitalize：将每个单词的首字符变为大写</p>
-</li>
-<li><p>uppercase：将每个单词的所有字符变为大写 </p>
-</li>
-<li><p>lowercase：将每个单词的所有字符变为小写</p>
-</li>
-<li><p>none：没有任何影响</p>
-</li>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">letter-spacing</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">word-spacing</span>: -<span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置文字的大小写转换"><a href="#设置文字的大小写转换" class="headerlink" title="设置文字的大小写转换"></a>设置文字的大小写转换</h4><p><strong>text-transform</strong></p>
+<ul>
+<li>capitalize：将每个单词的首字符变为大写</li>
+<li>uppercase：将每个单词的所有字符变为大写 </li>
+<li>lowercase：将每个单词的所有字符变为小写</li>
+<li>none：没有任何影响</li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">text-transforn</span>: capitalize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="首行缩进"><a href="#首行缩进" class="headerlink" title="首行缩进"></a>首行缩进</h4><p><strong>text-indent</strong></p>
-<p>text-indent: 2em; </p>
-<p>刚好是缩进2个文字</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">2em</span>; </span><br><span class="line">&#125;</span><br><span class="line">刚好是缩进2个文字</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">20px</span>; </span><br><span class="line">&#125;</span><br><span class="line">缩进20<span class="selector-tag">px</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="内容水平对齐方式"><a href="#内容水平对齐方式" class="headerlink" title="内容水平对齐方式"></a>内容水平对齐方式</h4><p><strong>text-align</strong></p>
 <p>块级元素需要加display： inline-block才能水平居中</p>
 <ul>
-<li><p>left：左对齐</p>
-</li>
-<li><p>right：右对齐</p>
-</li>
-<li><p>center：正中间显示</p>
-</li>
-<li><p>justify：两端对齐</p>
-</li>
+<li>left：左对齐</li>
+<li>right：右对齐</li>
+<li>center：正中间显示</li>
+<li>justify：两端对齐—不能设置最后一行</li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    text-align：justify；</span><br><span class="line">    <span class="selector-tag">text-align-last</span><span class="selector-pseudo">:justify</span>;<span class="comment">/*设置最后一行两端对齐*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h4><p><strong>line-height</strong></p>
 <p>行高可以先简单理解为一行文字所占据的高度</p>
 <p>行高的严格定义是：两行文字基线（baseline）之间的间距</p>
@@ -357,6 +357,8 @@
 <p>基于父元素的font-size计算，比如50%表示等于父元素font-size的一半</p>
 </li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="文字字体"><a href="#文字字体" class="headerlink" title="文字字体"></a>文字字体</h4><p><strong>font-family</strong></p>
 <p>可以设置1个或者多个字体名称（从左到右按顺序选择字体，直到找到可用的字体为止）</p>
 <p>一般情况下，英文字体只适用于英文，中文字体同时适用于英文和中文</p>
@@ -368,6 +370,8 @@
 <p>normal：等于400 </p>
 <p>bold：等于700</p>
 <p>strong、b、h1~h6等标签的font-weight默认就是bold</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h4><p><strong>font-style</strong></p>
 <ul>
 <li><p>normal：常规显示</p>
@@ -377,8 +381,10 @@
 <li><p>oblique：文本倾斜显示(让文字倾斜)</p>
 </li>
 </ul>
-<p>em、i、cite、address、var、dfn等元素的font-style默认就是italic</p>
-<p>设置font-style为italic的span元素，使用效果等价于em元素</p>
+<p><code>em、i、cite、address、var、dfn</code>等元素的font-style默认就是italic</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">spen</span> &#123;</span><br><span class="line">    <span class="attribute">font-style</span>: italic;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*需要支持斜体字体*/</span></span><br></pre></td></tr></table></figure>
+
+<p>设置font-style为italic的span元素，使用效果等价于<code>em</code>元素</p>
 <h4 id="小写字母变大写"><a href="#小写字母变大写" class="headerlink" title="小写字母变大写"></a>小写字母变大写</h4><ul>
 <li><p>normal：常规显示</p>
 </li>
@@ -897,7 +903,7 @@
 <span class="selector-tag">background-size</span>: 50%;
 <span class="selector-tag">length</span>：具体的大小
 <span class="selector-tag">background-size</span>: 50<span class="selector-tag">px</span> 5<span class="selector-tag">px</span>;
-&lt;!<span class="selector-tag">--</span>￼44<span class="selector-tag">--</span>&gt;
+&lt;!<span class="selector-tag">--</span>￼52<span class="selector-tag">--</span>&gt;
 </code></pre>
 </li>
 </ul>
@@ -1404,20 +1410,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
