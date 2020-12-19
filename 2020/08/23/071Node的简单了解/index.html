@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tingcygf.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Node是什么？它是一个将多种技术组合起来让Javascript也能调用的系统接口，开发后端应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node简单了解">
+<meta property="og:url" content="https://tingcygf.github.io/2020/08/23/071Node%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Ting的博客平台">
+<meta property="og:description" content="Node是什么？它是一个将多种技术组合起来让Javascript也能调用的系统接口，开发后端应用。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-23T01:23:34.000Z">
+<meta property="article:modified_time" content="2020-10-20T08:11:20.000Z">
+<meta property="article:author" content="Ting">
+<meta property="article:tag" content="前端总结">
+<meta property="article:tag" content="Node">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tingcygf.github.io/2020/08/23/071Node%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Node简单了解 | Ting的博客平台</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ting的博客平台</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tingcygf.github.io/2020/08/23/071Node%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ting.png">
+      <meta itemprop="name" content="Ting">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ting的博客平台">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Node简单了解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-23 09:23:34" itemprop="dateCreated datePublished" datetime="2020-08-23T09:23:34+08:00">2020-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-20 16:11:20" itemprop="dateModified" datetime="2020-10-20T16:11:20+08:00">2020-10-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Node是什么？"><a href="#Node是什么？" class="headerlink" title="Node是什么？"></a>Node是什么？</h2><p>它是一个将多种技术组合起来让Javascript也能调用的系统接口，开发后端应用。</p>
+<a id="more"></a>
+
+<h2 id="Node-js的技术"><a href="#Node-js的技术" class="headerlink" title="Node.js的技术"></a>Node.js的技术</h2><ol>
+<li>V8引擎</li>
+<li>libuv</li>
+<li>C/C++实现的c-ares、http-parser、OpemSSL、zlib等库</li>
+<li>了解更多：<a href="https://github.com/yjhjstz/deep-into-node" target="_blank" rel="noopener">https://github.com/yjhjstz/deep-into-node</a></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th align="center">Node.js API(http模块、fs模块、stram模块)等</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>Node.js       blindings(让js与C/C++通信)</td>
+<td align="center"></td>
+<td>C/C++插件(自定义其他能力)</td>
+<td></td>
+</tr>
+<tr>
+<td>js引擎V8</td>
+<td>跨平台的异步/O通信能力libuv</td>
+<td align="center">DNS解析c-ares</td>
+<td>加密解密OpenSSL</td>
+<td>其他zlib等库</td>
+</tr>
+</tbody></table>
+<h3 id="bindings"><a href="#bindings" class="headerlink" title="bindings"></a>bindings</h3><p>背景：C/C++实现一个http_parser库很高效，但是只会写JS。</p>
+<p>所以bindings当JS与C/C++的桥梁</p>
+<ol>
+<li>Node.js用C++对http_parser进行封装，封装文件叫http_parser_bindings.cpp</li>
+<li>Node.js提供编译工具编译为.node文件</li>
+<li>这样就可以JS调用C++库，Node.js提供很多binding，所以+s。就是bindings</li>
+</ol>
+<p>JS调用C++</p>
+<p>官方示例：<a href="http://nodejs.cn/api/addons.html#addons_function_arguments" target="_blank" rel="noopener">http://nodejs.cn/api/addons.html#addons_function_arguments</a></p>
+<p>C++调用JS回调</p>
+<p>官方示例：<a href="http://nodejs.cn/api/addons.html#addons_callbacks" target="_blank" rel="noopener">http://nodejs.cn/api/addons.html#addons_callbacks</a></p>
+<h3 id="V8引擎"><a href="#V8引擎" class="headerlink" title="V8引擎"></a>V8引擎</h3><p>功能：</p>
+<ol>
+<li>将JS源代码变成本地代码并执行</li>
+<li>维护调用栈，确保JS函数的执行顺序</li>
+<li>内存管理，为手游对象分配内存</li>
+<li>垃圾回收，重复利用无用的内存</li>
+<li>实现JS的标准库</li>
+</ol>
+<p>注意点：</p>
+<ol>
+<li>V8不提供DOM  API</li>
+<li>V8执行JS是单线程</li>
+<li>可以开启两个线程分别不同JS</li>
+<li>V8是多线程的：如垃圾回收为单独线程</li>
+<li>自带event loop 但Node.js基于libuv自己做了一个</li>
+</ol>
+<h3 id="libuv"><a href="#libuv" class="headerlink" title="libuv"></a>libuv</h3><p>背景：</p>
+<ol>
+<li>FreeBSD系统有kqueue、Linux系统上有epoll、Windows系统有IOCP</li>
+<li>Ryan（作者）为了实现跨平台的异步I/O库，开始写libuv</li>
+<li>libuv会根据系统自动选择合适的方案</li>
+</ol>
+<p>功能：用于TCP/UDP/DNS文件的异步操作</p>
+<h3 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h3><p>什么是Event </p>
+<ol>
+<li>内部的计算器到期了事件</li>
+<li>外部的文件可以读取、读取出错事件</li>
+<li>socket有内容了、关闭了告诉事件</li>
+</ol>
+<p>什么是Loop</p>
+<ol>
+<li>loop就是循环</li>
+<li>事件有优先级的所以处理起来也是分先后的，Node.js需要顺序论询每种事件，所以往往是循环的</li>
+</ol>
+<p>Event Loop</p>
+<ol>
+<li>操作系统可以触发事件，js可以处理事件</li>
+<li>Event Loop就是对事件处理的顺序管理</li>
+</ol>
+<p>顺序示意图翻译：<a href="https://juejin.im/post/6844903582538399752" target="_blank" rel="noopener">https://juejin.im/post/6844903582538399752</a></p>
+<p>重点阶段</p>
+<p>timers阶段：检查计时器</p>
+<p>poll轮询阶段：当轮询没事情处理后会停止在poll阶段</p>
+<p>check检查setlmmediate回调</p>
+<p>注意：大部分事件停在poll，文件、网络请求都在poll阶段</p>
+<h3 id="Node-js-API"><a href="#Node-js-API" class="headerlink" title="Node.js  API"></a>Node.js  API</h3><p>英文文档：<a href="https://nodejs.org/api/" target="_blank" rel="noopener">https://nodejs.org/api/</a></p>
+<p>中文文档：<a href="http://nodejs.cn/api/" target="_blank" rel="noopener">http://nodejs.cn/api/</a></p>
+<p>民间版本文档：devdocs.io</p>
+<h2 id="Node-js介绍"><a href="#Node-js介绍" class="headerlink" title="Node.js介绍"></a>Node.js介绍</h2><ul>
+<li>Node.js是一个基于Chrome V8引擎的JavaScript运行环境</li>
+<li>Node.js使用了一个事件驱动，非双重式I / O的模型，转换轻量又高效</li>
+<li>Node.js的包管理器npm，是全球最大的开源库生态系统</li>
+<li>javascript是脚本语言，需要解析器才能执行，浏览器就可以了解析器</li>
+<li>在Chrome中，解析器就是V8引擎，将javascript转换成机器码</li>
+<li>V8引擎是开源的，由C ++语言编写，性能高</li>
+<li>Node.js高性能，事件驱动，非双重，生态圈很好</li>
+</ul>
+<h2 id="Node-js安装"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a>Node.js安装</h2><ul>
+<li><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">官网</a>下载安装即可，很小不到20M！</li>
+<li>验证是否成功，命令行输入<code>node -v</code>显示版本号如</li>
+<li>按提示升级npm， <code>npm i -g npm</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>VS Code插件（Terminal）</p>
+<ul>
+<li>Node.js用途<ul>
+<li>javascript运行环境</li>
+<li>操作文件（grunt gulp webpack）</li>
+<li>操作数据库</li>
+<li>写api</li>
+<li>命令行工具</li>
+<li>网站开发</li>
+<li>聊天室</li>
+</ul>
+</li>
+<li>JavaScript语句后应该加分号么？<ul>
+<li><a href="https://www.zhihu.com/question/20298345" target="_blank" rel="noopener">知乎讨论</a></li>
+<li>代码风格而已，没有定论</li>
+<li>少分号更易读，不累</li>
+<li>必须加分号情况很少见：一行开头是括号<code>(</code>或者方<code>[</code>括号的时候加上分号就可以了，其他时候都不要</li>
+<li>如果下一行的行首是一个<code>( [ / + -</code>的话，js不会自动在上一行句尾加上分号</li>
+</ul>
+</li>
+</ul>
+<h2 id="类别对象"><a href="#类别对象" class="headerlink" title="类别对象"></a>类别对象</h2><ul>
+<li>总体对象<ul>
+<li>不用介绍，直接使用的对象</li>
+<li><a href="http://nodejs.cn/api/globals.html#globals_global_objects" target="_blank" rel="noopener">官方文档</a></li>
+<li>Buffer类，用于处理二进制数据</li>
+<li>控制台，用于打印stdout和stderr</li>
+<li>global，总体的命名空间对象</li>
+<li>过程，进程对象</li>
+<li>setTimeout（callback，delay [，… args]）</li>
+<li>setInterval（callback，delay [，… args]）</li>
+<li>setImmediate（callback [，… args]）</li>
+<li>clearTimeout（timeoutObject）</li>
+<li>clearInterval（intervalObject）</li>
+<li>clearImmediate（immediateObject）</li>
+</ul>
+</li>
+<li>以下变量虽然看起来像变量变量，但实际上不是<ul>
+<li>全局变量在所有模块中常规使用</li>
+<li>以下对象作用域只在模块内，详见<a href="http://nodejs.cn/api/modules.html" target="_blank" rel="noopener">模块文档</a>：</li>
+<li>__dirname</li>
+<li>__文件名</li>
+<li>出口商品</li>
+<li>模组</li>
+<li>要求（）</li>
+</ul>
+</li>
+<li>运行<code>.js</code>脚本文件<ul>
+<li><code>node app</code> 或者 <code>node app.js</code></li>
+</ul>
+</li>
+<li>实践代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">控制台。日志（&#39;hello world&#39; ）;</span><br><span class="line"></span><br><span class="line">的setTimeout （函数 （） &#123;</span><br><span class="line">    控制台。日志（“3秒已通过2” ）; </span><br><span class="line">&#125; ， 3000 ）;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;箭头函数，ES6的写法</span><br><span class="line">的setTimeout （（） &#x3D;&gt;  &#123;</span><br><span class="line">    控制台。登录（“3秒已通过1” ）; </span><br><span class="line">&#125; ， 3000 ）;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;每间隔2秒不断执行</span><br><span class="line">的setInterval （函数 （） &#123;</span><br><span class="line">    控制台。日志（“2秒钟后” ）; </span><br><span class="line">&#125; ， 2000 ）;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">VAR 时间 &#x3D;  0 </span><br><span class="line">VAR 计时器 &#x3D; 的setInterval （函数 （） &#123;</span><br><span class="line">    时间 + &#x3D;  2 ;</span><br><span class="line">    控制台。登录（时间 +  “秒已经过去了” ）;</span><br><span class="line">    如果 （时间 &gt;  6 ） &#123; </span><br><span class="line">        clearInterval （计时器）;</span><br><span class="line">        控制台。登录（“clearInterval” ）</span><br><span class="line">    &#125; </span><br><span class="line">&#125; ， 2000年）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;输出当前目录和带绝对路径的文件名</span><br><span class="line">console 。log （__dirname ）</span><br><span class="line">控制台。日志（__filename ）</span><br><span class="line"></span><br><span class="line">控制台。log （&#39;end&#39; ）</span><br><span class="line">控制台。dir （全球）</span><br></pre></td></tr></table></figure>
+
+<h2 id="某些函数"><a href="#某些函数" class="headerlink" title="某些函数"></a>某些函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">函数 sayHi （） &#123;</span><br><span class="line">    控制台。日志（“嗨” ）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi （） &#x2F;&#x2F;调用函数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;将匿名函数赋给变量</span><br><span class="line">var  sayBye  &#x3D;  function  （name ） &#123; </span><br><span class="line">    console 。日志（名称 +  &#39;再见&#39; ）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayBye （）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;第一个参数是函数</span><br><span class="line">function  callFunction （fun ， name ） &#123; </span><br><span class="line">    fun （name ）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">callFunction （sayBye ， &#39;能够&#39; ）</span><br><span class="line">&#x2F;&#x2F;或者</span><br><span class="line">callFunction （函数 （名称） &#123;</span><br><span class="line">    控制台。登录（名字 +  &#39;再见&#39; ）</span><br><span class="line">&#125; ， &#39;能够&#39; ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ul>
+<li>module对象<ul>
+<li>每个文件都被视为独立的模块</li>
+<li>每个模块中，module指向表示当前模块的对象的引用</li>
+<li>module既不是等级的，又每个模块本地的</li>
+<li>module.exports导出模块内部的对象，方便其他对象引用</li>
+<li>require（）帖子模块</li>
+<li>当Node.js直接运行一个文件时，require.main会被设为它的模块</li>
+<li>可以通过require.main ===模块来判断一个文件是否被直接运行</li>
+<li>模块提供了一个filename属性（通常相等于__filename）</li>
+<li>可以通过检查require.main.filename来获取当前应用程序的入口点</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// counter.js </span></span><br><span class="line"><span class="keyword">var</span>  counter  =  <span class="function"><span class="keyword">function</span>  （<span class="title">arr</span> ） </span>&#123;</span><br><span class="line">    返回 “有”  +  arr 。长度 +  “数组中的元素” </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  adder  =  <span class="function"><span class="keyword">function</span>  （<span class="title">a</span> ， <span class="title">b</span> ） </span>&#123;</span><br><span class="line">    返回 <span class="string">`两个数字的和为$ &#123; a + b &#125; `</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  pi  =  <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//只有一个时可以这样引入</span></span><br><span class="line"><span class="comment">// module.exports = counter</span></span><br><span class="line"></span><br><span class="line">/ * </span><br><span class="line"><span class="built_in">module</span>.exports.counter =计数器</span><br><span class="line"><span class="built_in">module</span>.exports.adder =加法器</span><br><span class="line"><span class="built_in">module</span>.exports.pi = pi </span><br><span class="line">* <span class="regexp">/</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">模块。出口 =  &#123;</span></span><br><span class="line"><span class="regexp">    计数器：计数器，</span></span><br><span class="line"><span class="regexp">    加法器：加法器，</span></span><br><span class="line"><span class="regexp">    pi：pi ，</span></span><br><span class="line"><span class="regexp">&#125; </span></span><br><span class="line"><span class="regexp">/</span> *对象可以</span><br><span class="line">简写<span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    计数器，</span><br><span class="line">    加法器，</span><br><span class="line">    pi，</span><br><span class="line">&#125; </span><br><span class="line">* <span class="regexp">/</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/p4.js </span></span><br><span class="line"><span class="regexp">var  stuff  =  require （'./</span>count<span class="string">' ）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">控制台。日志（东西。计数器（[ '</span>红宝石<span class="string">' ， '</span>nodejs<span class="string">' ， '</span>反应<span class="string">' ] ））</span></span><br><span class="line"><span class="string">控制台。日志（东西。加法器（3 ， 2 ））</span></span><br><span class="line"><span class="string">的控制台。日志（东东。PI ）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
+<li>多数Node.js核心API都采用了事件驱动架构</li>
+<li>所有能触发事件的对象都是EventEmitter类的实例</li>
+<li>事件名称通常是驼峰式的字符串</li>
+<li>实践代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">var  events  &#x3D;  require （&#39;events&#39; ）</span><br><span class="line">var  util  &#x3D;  require （&#39;util&#39; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;事件对象</span><br><span class="line">var  myEmitter  &#x3D; 新 事件。EventEmitter （）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;绑定事件名称和预期函数</span><br><span class="line">myEmitter 。上（&#39;someEvent&#39; ， 函数 （消息） &#123;</span><br><span class="line">    控制台。登录（消息）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;触发实践，使用事件名称</span><br><span class="line">myEmitter 。发出（&#39;someEvent&#39; ， &#39;事件被发出&#39; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;创建对象</span><br><span class="line">var  Person  &#x3D;  function  （name ） &#123; </span><br><span class="line">    this 。名称 &#x3D; 名称</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;继承，让Person类具有事件对象的特性，绑定和触发事件</span><br><span class="line">util 。继承（人物， 事件。EventEmitter ）</span><br><span class="line">&#x2F;&#x2F;新建对象</span><br><span class="line">VAR 晓明 &#x3D; 新的 人（&#39;小明&#39; ）</span><br><span class="line">VAR 丽丽 &#x3D; 新的 人（“丽丽）</span><br><span class="line"></span><br><span class="line">变种 人 &#x3D;  [明， 利利]</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;循环人，绑定事件</span><br><span class="line">person 。的forEach （函数 （人） &#123;</span><br><span class="line">    人。在（&#39;说话&#39; ， 函数 （消息） &#123;</span><br><span class="line">        控制台。登录（人，名字 +  &#39;说：&#39;  + 消息）</span><br><span class="line">    &#125; ）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;触发事件</span><br><span class="line">xiaoming 。EMIT （&#39;说&#39; ， &#39;喜&#39; ）</span><br><span class="line">利利。发出（“说话” ， “我要咖喱” ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="读写文件（同步和异步）"><a href="#读写文件（同步和异步）" class="headerlink" title="读写文件（同步和异步）"></a>读写文件（同步和异步）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  fs  =  <span class="built_in">require</span> （<span class="string">'fs'</span> ）</span><br><span class="line"></span><br><span class="line"><span class="comment">//同步读取文件，顺序执行，如果读取时间很长，会中断进程</span></span><br><span class="line"><span class="keyword">var</span>  readMe  =  fs 。readFileSync （<span class="string">'readMe.txt'</span> ， <span class="string">'utf8'</span> ）</span><br><span class="line">fs 。writeFileSync （<span class="string">'writeMe.txt'</span> ， readMe ）</span><br><span class="line"></span><br><span class="line">控制台。日志（自述）</span><br><span class="line">控制台。日志（“同步完成” ）</span><br><span class="line"></span><br><span class="line"><span class="comment">// //异步读写文件</span></span><br><span class="line"><span class="comment">//初始化事件，Nodejs维护一个事件变量，注册事件，完成后执行主线程</span></span><br><span class="line"><span class="comment">//当主线程变量时，重新执行事件，从线程池中发起线程执行事件，当事件执行完成后通知主线程。这就是上游高效的原因。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  readMe  =  fs 。READFILE （<span class="string">'README.TXT'</span> ， <span class="string">'UTF8'</span> ， 函数 （ERR ， 数据） &#123; </span><br><span class="line">    FS 。WriteFile的（<span class="string">'writeMe.txt'</span> ， 数据， 函数 （） &#123;</span><br><span class="line">        控制台。登录（<span class="string">'writeMe已完成'</span> ）</span><br><span class="line">    &#125; ）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">控制台。日志（<span class="string">'end'</span> ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建和删除目录"><a href="#创建和删除目录" class="headerlink" title="创建和删除目录"></a>创建和删除目录</h2><ul>
+<li><a href="http://nodejs.cn/api/fs.html#fs_fs_unlink_path_callback" target="_blank" rel="noopener">fs-文件系统API文档</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var  fs  &#x3D;  require （&#39;fs&#39; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初步删除文件</span><br><span class="line">fs 。取消链接（&#39;writeMe.txt&#39; ， 函数 （） &#123;</span><br><span class="line">    控制台。登录（&#39;删除文件writeMe.txt&#39; ）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;同步创建和删除目录</span><br><span class="line">fs 。mkdirSync （&#39;stuff&#39; ）</span><br><span class="line">fs 。rmdirSync （&#39;东西&#39; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;异步</span><br><span class="line">fs 。MKDIR （&#39;东西&#39; ， 函数 （） &#123; </span><br><span class="line">    FS 。READFILE （&#39;README.TXT&#39; ， &#39;UTF8&#39; ， 函数 （ERR ， 数据） &#123; </span><br><span class="line">        FS 。WriteFile的（&#39;.&#x2F;stuff&#x2F;writeMe.txt&#39; ， 数据， 函数 （） &#123;</span><br><span class="line">            控制台。登录（&#39;成功复制&#39; ）</span><br><span class="line">        &#125; ）</span><br><span class="line">    &#125; ）</span><br><span class="line">&#125; ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="流和管道"><a href="#流和管道" class="headerlink" title="流和管道"></a>流和管道</h2><ul>
+<li>流（stream）<ul>
+<li>处理流式数据的抽象接口</li>
+<li>stream模块提供了一些基础的API，用于实现实现了流接口的对象</li>
+<li>流可以是效果的，可写的，或者可读写的，所有的流都是EventEmitter的实例</li>
+<li>流处理数据通过缓存可以提高性能</li>
+</ul>
+</li>
+<li>管道<ul>
+<li>使用管道，代码量消耗</li>
+<li>myReadStream.pipe（myWriteStream）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var  fs  &#x3D;  require （&#39;fs&#39; ）</span><br><span class="line"></span><br><span class="line">var  myReadStream  &#x3D;  fs 。createReadStream （__dirname  +  &#39;&#x2F;readMe.txt&#39; ）</span><br><span class="line">myReadStream 。setEncoding （&#39;utf8&#39; ）</span><br><span class="line">var  myWriteStream  &#x3D;  fs 。createWriteStream （__dirname  +  &#39;&#x2F;writeMe.txt&#39; ）</span><br><span class="line">var  data  &#x3D;  &#39;&#39;</span><br><span class="line"></span><br><span class="line">myReadStream 。上（&#39;数据&#39; ， 功能 （块） &#123;</span><br><span class="line">    控制台。登录（&#39;接收新的块&#39; ）</span><br><span class="line">    &#x2F;&#x2F;的console.log（块）</span><br><span class="line">    myWriteStream 。写（块）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">myReadStream 。上（&#39;结束&#39; ， 函数 （） &#123;</span><br><span class="line">    控制台。日志（数据）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">var  writeData  &#x3D;  &#39;hello </span><br><span class="line">world&#39;myWriteStream 。write （writeData ）</span><br><span class="line">myWriteStream 。end （）</span><br><span class="line">myWriteStream 。上（&#39;完成&#39; ， 函数 （） &#123;</span><br><span class="line">    控制台。登录（&#39;完成&#39; ）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;使用管道，代码量适合</span><br><span class="line">myReadStream 。管道（myWriteStream ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器part1简介"><a href="#web服务器part1简介" class="headerlink" title="web服务器part1简介"></a>web服务器part1简介</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var  http  &#x3D;  require （&#39;http&#39; ）</span><br><span class="line"></span><br><span class="line">var  server  &#x3D;  http 。createServer （功能 （REQ ， RES ） &#123;</span><br><span class="line">    控制台。登录（&#39;接收到的请求&#39; ）</span><br><span class="line">    资源。writeHead （200 ， &#123;  &#39;内容类型&#39;：&#39;文本&#x2F;无格式&#39;  &#125; ）</span><br><span class="line">    &#x2F;&#x2F; res.write（“你好从出应用程序的）</span><br><span class="line">    &#x2F;&#x2F; res.end（）</span><br><span class="line">    &#x2F;&#x2F;或</span><br><span class="line">    水库。端（&#39;你好从出应用&#39; ）</span><br><span class="line">&#125; ）</span><br><span class="line"></span><br><span class="line">服务器。监听（3000 ， &#39;127.0.0.1&#39; ）</span><br><span class="line">控制台。日志（“服务器已从http:&#x2F;&#x2F;127.0.0.1:3000启动” ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器part2响应JSON"><a href="#web服务器part2响应JSON" class="headerlink" title="web服务器part2响应JSON"></a>web服务器part2响应JSON</h2><ul>
+<li>响应JSON</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var  myObj  &#x3D;  &#123; </span><br><span class="line">        name：&#39;able&#39; ，</span><br><span class="line">        job：&#39;programmer&#39; ，</span><br><span class="line">        age：27 </span><br><span class="line">    &#125; </span><br><span class="line">    res 。端（JSON 。字符串化（MyObj中））</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>JSON对象<ul>
+<li>字符串必须使用双引号表示，不能使用单引号</li>
+<li>对象的键名必须放在双引号里面</li>
+<li>副本或对象最后一个成员的后面，不能加逗号</li>
+<li>JSON对象是JavaScript的原生对象，采用处理JSON格式数据</li>
+<li>JSON.stringify方法用于将一个值转为JSON字符串</li>
+<li>JSON.parse方法用于将JSON字符串转换成对应的值</li>
+</ul>
+</li>
+</ul>
+<h2 id="web服务器part3响应HTML页面"><a href="#web服务器part3响应HTML页面" class="headerlink" title="web服务器part3响应HTML页面"></a>web服务器part3响应HTML页面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var  http  &#x3D;  require （&#39;http&#39; ）</span><br><span class="line">var  fs  &#x3D;  require （&#39;fs&#39; ）</span><br><span class="line"></span><br><span class="line">var  onRequest  &#x3D;  function  （req ， res ） &#123;</span><br><span class="line">    控制台。日志（“已收到请求” ）</span><br><span class="line">    res 。writeHead （200 ， &#123;  &#39;Content-Type&#39;：&#39;text &#x2F; html&#39;  &#125; ）</span><br><span class="line">    &#x2F;&#x2F; res.writeHead（200，&#123;&#39;Content-Type&#39;：&#39;text &#x2F; plain&#39;&#125;）</span><br><span class="line">    var  myReadStream  &#x3D;  fs 。createReadStream （__dirname  +  &#39;&#x2F; index.html &#39; ， &#39;utf8&#39; ）</span><br><span class="line">    myReadStream 。管道（res ）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var  server  &#x3D;  http 。createServer （onRequest ）</span><br><span class="line">服务器。听（3000 ）</span><br><span class="line">控制台。日志（“服务器已从http:&#x2F;&#x2F;127.0.0.1:3000启动” ）</span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器part4用预设思想组织代码"><a href="#web服务器part4用预设思想组织代码" class="headerlink" title="web服务器part4用预设思想组织代码"></a>web服务器part4用预设思想组织代码</h2><ul>
+<li>代码封装成模块，方便统一管理和调用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; server.js </span><br><span class="line">var  http  &#x3D;  require （&#39;http&#39; ）</span><br><span class="line">var  fs  &#x3D;  require （&#39;fs&#39; ）</span><br><span class="line"></span><br><span class="line">函数 startServer （） &#123; </span><br><span class="line">    var  onRequest  &#x3D; 函数 （req ， res ） &#123;</span><br><span class="line">        控制台。日志（“已收到请求” ）</span><br><span class="line">        res 。writeHead （200 ， &#123;  &#39;Content-Type&#39;：&#39;text &#x2F; html&#39;  &#125; ）</span><br><span class="line"></span><br><span class="line">        var  myReadStream  &#x3D;  fs 。createReadStream （__dirname  +  &#39;&#x2F; index.html &#39; ， &#39;utf8&#39; ）</span><br><span class="line">        myReadStream 。管道（res ）</span><br><span class="line">    &#125; </span><br><span class="line">    var  server  &#x3D;  http 。createServer （onRequest ）</span><br><span class="line">    服务器。听（3000 ）</span><br><span class="line">    控制台。日志（“服务器在http:&#x2F;&#x2F;127.0.0.1:3000上启动” ）</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">模块。出口。startServer  &#x3D;  startServer</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;调用</span><br><span class="line">var  server  &#x3D;  require （&#39;.&#x2F;server&#39; ）</span><br><span class="line"></span><br><span class="line">服务器。startServer （）</span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器part5路由"><a href="#web服务器part5路由" class="headerlink" title="web服务器part5路由"></a>web服务器part5路由</h2><ul>
+<li><code>console.dir(xx)</code> 查看对象的所有属性和方法</li>
+<li><code>req.url</code> 请求中包含url等属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">函数 startServer （） &#123; </span><br><span class="line">    var  onRequest  &#x3D;  function  （req ， res ） &#123;</span><br><span class="line">        控制台。日志（&#39;接收到的请求&#39;  +  REQ 。URL ）</span><br><span class="line"></span><br><span class="line">        如果 （REQ 。网址 &#x3D;&#x3D;&#x3D;  &#39;&#x2F;&#39;  ||  REQ 。网址 &#x3D;&#x3D;&#x3D;  &#39;&#x2F;家&#39; ） &#123;</span><br><span class="line">            资源。writeHead （200 ， &#123;  &#39;Content-Type&#39;：&#39;text &#x2F; html&#39;  &#125; ）</span><br><span class="line">            fs 。createReadStream （__dirname  +  &#39;&#x2F; index.html &#39; ， &#39;utf8&#39; ）。管（RES ）</span><br><span class="line">        &#125; 否则 如果 （REQ 。网址 &#x3D;&#x3D;&#x3D;  &#39;&#x2F;评论&#39; ） &#123; </span><br><span class="line">            res 。writeHead （200 ， &#123;  &#39;Content-Type&#39;：&#39;text &#x2F; html&#39;  &#125; ）</span><br><span class="line">            fs 。createReadStream （__dirname  +  &#39;&#x2F;review.html&#39; ， &#39;utf8&#39; ）。管（RES ）</span><br><span class="line">        &#125; 否则 如果 （REQ 。网址 &#x3D;&#x3D;&#x3D;  &#39;&#x2F; API &#x2F; V1 &#x2F;记录&#39; ） &#123;</span><br><span class="line">            资源。writeHead （200 ， &#123;  &#39;Content-Type&#39;：&#39;application &#x2F; json&#39;  &#125;）</span><br><span class="line">            var  jsonObj  &#x3D;  &#123; </span><br><span class="line">                name：&#39;able&#39; </span><br><span class="line">            &#125; </span><br><span class="line">            res 。端（JSON 。字符串化（jsonObj ））</span><br><span class="line">        &#125; 否则 &#123;</span><br><span class="line">            水库。writeHead （200 ， &#123;  &#39;Content-Type&#39;：&#39;text &#x2F; html&#39;  &#125; ）</span><br><span class="line">            fs 。createReadStream （__dirname  +  &#39;&#x2F;404.html&#39; ， &#39;utf8&#39; ）。管道（res ）</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    var  server  &#x3D;  http 。createServer （onRequest ）</span><br><span class="line">    服务器。听（3000 ）</span><br><span class="line">    控制台。日志（“服务器在http:&#x2F;&#x2F;127.0.0.1:3000上启动” ）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器part6重构路由代码"><a href="#web服务器part6重构路由代码" class="headerlink" title="web服务器part6重构路由代码"></a>web服务器part6重构路由代码</h2><ul>
+<li>将路由，处理函数和主程序分离，单独放置</li>
+<li>分工明确，各司其职，方便管理</li>
+</ul>
+<h2 id="web服务器part7使用GET或POST请求发送数据"><a href="#web服务器part7使用GET或POST请求发送数据" class="headerlink" title="web服务器part7使用GET或POST请求发送数据"></a>web服务器part7使用GET或POST请求发送数据</h2><ul>
+<li>querystring-查询字符串<ul>
+<li><code>var querystring = require(&#39;querystring&#39;)</code></li>
+<li><code>querystring.parse(data)</code> 把一个URL查询字符串str解析成一个键值对的集合</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;接收请求数据，然后处理，查看请求类型</span><br><span class="line">var  data  &#x3D;  “” </span><br><span class="line">req 。on （“错误” ， 功能 （err ） &#123;</span><br><span class="line">    控制台。错误（err ）</span><br><span class="line">&#125; ）。on （“ data” ， function  （chunk ） &#123; </span><br><span class="line">    data  + &#x3D;  chunk </span><br><span class="line">&#125; ）。上（“结束” ， 函数 （） &#123;</span><br><span class="line">    如果 （REQ 。评判 &#x3D;&#x3D;&#x3D;  “POST” ） &#123;</span><br><span class="line">        如果 （数据。长度 &gt;  1E6 ） &#123; </span><br><span class="line">            REQ 。连接。破坏（） &#x2F;&#x2F;如果数据很大，就断开</span><br><span class="line">        &#125;</span><br><span class="line">        路线（手柄， 路径名， 水库， 查询字符串。解析（数据））</span><br><span class="line">    &#125; 否则 &#123; </span><br><span class="line">        VAR  PARAMS  &#x3D;  URL 。解析（REQ 。网址， 真）。查询</span><br><span class="line">        路由（handle ， pathname ， res ， params ）</span><br><span class="line">    &#125; </span><br><span class="line">&#125; ））</span><br><span class="line">&#x2F;&#x2F;或者</span><br><span class="line">&#x2F;&#x2F; var data &#x3D; [] </span><br><span class="line">&#x2F;&#x2F; data.push（chunk）</span><br><span class="line">&#x2F;&#x2F; data &#x3D; Buffer.concat（data）.toString（）</span><br></pre></td></tr></table></figure>
+
+<h2 id="包管理器npm"><a href="#包管理器npm" class="headerlink" title="包管理器npm"></a>包管理器npm</h2><ul>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm官网</a><ul>
+<li><a href="https://www.npmjs.com/package/express" target="_blank" rel="noopener">搜索查看快递</a></li>
+</ul>
+</li>
+<li><code>npm install -g xxx</code> 整体安装螺丝文件，用作命令行工具</li>
+<li>使用国内源，解决慢的问题</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">＃或在.bashrc或</span><br><span class="line">.zshrc中为其添加别名echo  &#39; \ n＃alias for npm \ nalias npm &#x3D;“ npm --registry &#x3D; https：&#x2F;&#x2F;registry.npm.taobao.org \ </span><br><span class="line">  --cache &#x3D; $ HOME &#x2F; .npm &#x2F; .cache &#x2F; npm \ </span><br><span class="line">  --disturl &#x3D; https：&#x2F;&#x2F;npm.taobao.org&#x2F;dist \ </span><br><span class="line">  --userconfig &#x3D; $ HOME &#x2F; .npmrc“ &#39;  &gt;&gt;  〜&#x2F; .zshrc &amp;&amp; 源码 〜&#x2F; .zshrc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>yarn也是包管理器，刷新下载速度</li>
+</ul>
+<h2 id="package-json文件"><a href="#package-json文件" class="headerlink" title="package.json文件"></a>package.json文件</h2><ul>
+<li>记录项目中使用的包名，发布时不用包内容了，只要名称就行</li>
+<li><code>npm init</code>提问式初始化项目信息，生成<code>package.json</code>文件，-y</li>
+<li><code>npm install --save xxx</code>安装的同时，将信息写入package.json</li>
+<li><code>npm install --save-dev xxx</code>安装的同时，将信息写入package.json中的dev开发依赖</li>
+<li><code>npm view moduleNames</code> 查看node模块的package.json文件夹</li>
+<li><code>npm run start</code> 启动包，执行package.json脚本中的start命令，还有stop restart test</li>
+<li><code>npm install</code> 安装package.json中记录的包</li>
+</ul>
+<h2 id="nodemon监控文件并重启服务"><a href="#nodemon监控文件并重启服务" class="headerlink" title="nodemon监控文件并重启服务"></a>nodemon监控文件并重启服务</h2><ul>
+<li>nodemon使用监视应用中的任何文件更改并自动重启服务</li>
+<li>非常适合用在开发环境中，方便啊，不用手动操作了</li>
+<li>整体安装 <code>npm install -g nodemon</code></li>
+<li>本地安装 <code>npm install --save-dev nodemon</code></li>
+<li>启动应用 <code>nodemon [your node app]</code></li>
+<li>获取修改package.json中的启动脚本，添加<code>nodemon app.js</code>，用npm start直接启动，方便</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/" rel="tag"># 前端总结</a>
+              <a href="/tags/Node/" rel="tag"># Node</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/23/051jQuery%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/" rel="prev" title="jQuery基础总结笔记">
+      <i class="fa fa-chevron-left"></i> jQuery基础总结笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/16/061%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" rel="next" title="力扣算法思路笔记">
+      力扣算法思路笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node是什么？"><span class="nav-number">1.</span> <span class="nav-text">Node是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js的技术"><span class="nav-number">2.</span> <span class="nav-text">Node.js的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bindings"><span class="nav-number">2.1.</span> <span class="nav-text">bindings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V8引擎"><span class="nav-number">2.2.</span> <span class="nav-text">V8引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#libuv"><span class="nav-number">2.3.</span> <span class="nav-text">libuv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Loop"><span class="nav-number">2.4.</span> <span class="nav-text">Event Loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js-API"><span class="nav-number">2.5.</span> <span class="nav-text">Node.js  API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js介绍"><span class="nav-number">3.</span> <span class="nav-text">Node.js介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js安装"><span class="nav-number">4.</span> <span class="nav-text">Node.js安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类别对象"><span class="nav-number">5.</span> <span class="nav-text">类别对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#某些函数"><span class="nav-number">6.</span> <span class="nav-text">某些函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">7.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">8.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读写文件（同步和异步）"><span class="nav-number">9.</span> <span class="nav-text">读写文件（同步和异步）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和删除目录"><span class="nav-number">10.</span> <span class="nav-text">创建和删除目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流和管道"><span class="nav-number">11.</span> <span class="nav-text">流和管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part1简介"><span class="nav-number">12.</span> <span class="nav-text">web服务器part1简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part2响应JSON"><span class="nav-number">13.</span> <span class="nav-text">web服务器part2响应JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part3响应HTML页面"><span class="nav-number">14.</span> <span class="nav-text">web服务器part3响应HTML页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part4用预设思想组织代码"><span class="nav-number">15.</span> <span class="nav-text">web服务器part4用预设思想组织代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part5路由"><span class="nav-number">16.</span> <span class="nav-text">web服务器part5路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part6重构路由代码"><span class="nav-number">17.</span> <span class="nav-text">web服务器part6重构路由代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器part7使用GET或POST请求发送数据"><span class="nav-number">18.</span> <span class="nav-text">web服务器part7使用GET或POST请求发送数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包管理器npm"><span class="nav-number">19.</span> <span class="nav-text">包管理器npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json文件"><span class="nav-number">20.</span> <span class="nav-text">package.json文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodemon监控文件并重启服务"><span class="nav-number">21.</span> <span class="nav-text">nodemon监控文件并重启服务</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ting"
+      src="/images/ting.png">
+  <p class="site-author-name" itemprop="name">Ting</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/TINGCYGF" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;TINGCYGF" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1127163160@QQ.com" title="E-Mail → 1127163160@QQ.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ting</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
