@@ -1,0 +1,1 @@
+import{g as e}from"./index-c5a6ed04.js";const t={settings:{title:"System Settings"}},o=Object.freeze(Object.defineProperty({__proto__:null,default:t},Symbol.toStringTag,{value:"Module"})),s=Object.assign({"./en/layout.ts":o}),l={message:{...e(s,"en")},dateLocale:null,dateLocaleName:"en"};export{l as default};

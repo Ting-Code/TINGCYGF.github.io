@@ -1,0 +1,1 @@
+import{g as e}from"./index-c5a6ed04.js";const t={settings:{title:"系统设置"}},o=Object.freeze(Object.defineProperty({__proto__:null,default:t},Symbol.toStringTag,{value:"Module"})),s=Object.assign({"./zh-CN/layout.ts":o}),a={message:{...e(s,"zh-CN")}};export{a as default};
